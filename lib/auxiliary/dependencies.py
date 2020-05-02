@@ -253,8 +253,10 @@ def preparation_file_parser(depsdict, username, options, hostname, process_manag
             _line = _line.strip()
 
             _store, _store_ip, _store_port, _store_protocol, _store_username = _line.split()
-                        
-            _cmd = "nc -z -w 3 -" + _store_protocol[0].lower() + ' ' + _store_ip + ' ' + _store_port
+            proto = ' -' + _store_protocol[0].lower()
+            if proto == ' -t':
+                proto = ''
+            _cmd = "nc -z -w 3" + proto + ' ' + _store_ip + ' ' + _store_port
 
             if _store not in depsdict["stores"] :
                 depsdict["stores"].append(_store) 

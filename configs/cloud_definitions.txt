@@ -21,7 +21,7 @@ STARTUP_CLOUD = MYSIM
 
 # List the clouds you want to define
 CLOUDOPTION_MYSIM = cldattach sim, vmcattach all
-CLOUDOPTION_MYOS = cldattach osk, vmcattach all
+CLOUDOPTION_MYOSK = cldattach osk, vmcattach all
 CLOUDOPTION_MYEC2 = cldattach ec2, vmcattach all
 CLOUDOPTION_MYVCD = cldattach vcd, vmcattach all
 CLOUDOPTION_MYPLM = cldattach plm, vmcattach all
@@ -46,7 +46,7 @@ SIM_SECURITY_GROUPS = simsecgrp
 SIM_LOGIN = cbuser
 #-------------------------------------------------------------------------------
 # OpenStack (OSK) requires the following parameters (replace everything between <>, *including* the signs!)
-[USER-DEFINED : CLOUDOPTION_MYOS]
+[USER-DEFINED : CLOUDOPTION_MYOSK]
 OSK_ACCESS = http://<address>:5000/v2.0/                                                                              # Address of the controller node (where nova-api runs)
 OSK_CREDENTIALS =  <user>-<password>-<tenant>
 OSK_INITIAL_VMCS = RegionOne:sut                                                                                      # Change "RegionOne" accordingly

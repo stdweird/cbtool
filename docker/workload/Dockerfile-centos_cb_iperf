@@ -1,0 +1,8 @@
+FROM REPLACE_NULLWORKLOAD_CENTOS
+
+# iperf-install-pm
+RUN yum update -y
+RUN yum install -y iperf3 iperf
+# iperf-install-pm
+
+RUN chown -R REPLACE_USERNAME:REPLACE_USERNAME /home/REPLACE_USERNAME

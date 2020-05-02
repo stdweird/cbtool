@@ -125,8 +125,8 @@ NEST_CONTAINERS_BASE_IMAGE = size:NA, imageids:1, imageid1:bionic-server-cloudim
 
 [SIZE_TEMPLATES : OSK_CLOUDCONFIG]
 # Sizes extracted from https://docs.openstack.org/nova/stein/admin/flavors.html
-01-256=m1.tiny
-01-512=m1.tiny
+01-256=m1.small
+01-512=m1.small
 01-1024=m1.small
 01-2048=m1.small
 01-2560=m1.small

@@ -34,4 +34,5 @@ sudo systemctl enable redis mongod
 
 sudo yum install -y psmisc
 
-echo "Now good to go: run  ~/cbtool/cb --soft_reset"
+echo "Modify ~/cbtool/configs/centos_cloud_definitions.txt set password for demo project in OSK section and select STARTUP_CLOUD MYOSK"
+echo "then start ~/cbtool/cb --soft_reset"

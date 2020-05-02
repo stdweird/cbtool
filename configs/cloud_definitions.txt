@@ -18,6 +18,7 @@ MAIN_BASE_DIR = $PATH_TO_TOOL
 
 # Which cloud to pick first when the tool first starts
 STARTUP_CLOUD = MYSIM
+#STARTUP_CLOUD = MYOSK
 
 # List the clouds you want to define
 CLOUDOPTION_MYSIM = cldattach sim, vmcattach all
@@ -47,14 +48,14 @@ SIM_LOGIN = cbuser
 #-------------------------------------------------------------------------------
 # OpenStack (OSK) requires the following parameters (replace everything between <>, *including* the signs!)
 [USER-DEFINED : CLOUDOPTION_MYOSK]
-OSK_ACCESS = http://<address>:5000/v2.0/                                                                              # Address of the controller node (where nova-api runs)
-OSK_CREDENTIALS =  <user>-<password>-<tenant>
+OSK_ACCESS = https://cloudpr.ugent.be:13000/v3 # keystone api                       # Address of the controller node (where nova-api runs)
+OSK_CREDENTIALS =  demo-nottherealpasswd-demo
 OSK_INITIAL_VMCS = RegionOne:sut                                                                                      # Change "RegionOne" accordingly
 OSK_SECURITY_GROUPS = default	                                                                                      # Make sure that this group exists first
-OSK_NETNAME = private                                                                                                 # Make sure that this network exists first
+OSK_NETNAME = default                                                                                                # Make sure that this network exists first
 OSK_SSH_KEY_NAME = cbtool_rsa                                                                                         # Name of the private/public key pair - locally available - used to login on the VMs
 OSK_KEY_NAME = cbtool_rsa                                                                                             # Name of the private key present in the cloud to be injected on VMs
-OSK_LOGIN = cbuser                                                                                                    # The username that logins on the VMs
+OSK_LOGIN = centos                                                                                                # The username that logins on the VMs
 #-------------------------------------------------------------------------------
 # Elastic Compute Cloud (EC2) requires the following parameters 
 [USER-DEFINED : CLOUDOPTION_MYEC2] 

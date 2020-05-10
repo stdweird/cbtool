@@ -2017,7 +2017,7 @@ function automount_data_dirs {
         then
 
             #        ROLE_DATA_SIZE=$(get_my_ai_attribute_with_default ${my_role}_data_size 256m)
-            DATA_SIZE=$(get_my_vm_attribute_with_default data_size 256m)
+            ROLE_DATA_SIZE=$(get_my_vm_attribute_with_default data_size 256m)
             mount_filesystem_on_memory ${ROLE_DATA_DIR} $ROLE_DATA_FSTYP ${ROLE_DATA_SIZE} ${my_login_username}
 
         elif [[ $ROLE_DATA_FSTYP == "nfs" ]]
@@ -2025,8 +2025,8 @@ function automount_data_dirs {
 
             #        ROLE_DATA_FILESERVER_IP=$(get_my_ai_attribute_with_default ${my_role}_data_fileserver_ip none)
             #        ROLE_DATA_FILESERVER_PATH=$(get_my_ai_attribute_with_default ${my_role}_data_fileserver_path none)
-            DATA_FILESERVER_IP=$(get_my_vm_attribute_with_default data_fileserver_ip none)
-            DATA_FILESERVER_PATH=$(get_my_vm_attribute_with_default data_fileserver_path none)
+            ROLE_DATA_FILESERVER_IP=$(get_my_vm_attribute_with_default data_fileserver_ip none)
+            ROLE_DATA_FILESERVER_PATH=$(get_my_vm_attribute_with_default data_fileserver_path none)
             if [[ $ROLE_DATA_FILESERVER_IP != "none" && $ROLE_DATA_FILESERVER_PATH != "none" ]]
             then
                 mount_remote_filesystem ${ROLE_DATA_DIR} ${ROLE_DATA_FSTYP} ${ROLE_DATA_FILESERVER_IP} ${ROLE_DATA_FILESERVER_PATH} ${my_login_username}

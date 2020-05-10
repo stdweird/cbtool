@@ -56,6 +56,18 @@ OSK_NETNAME = default                                                           
 OSK_SSH_KEY_NAME = cbtool_rsa                                                                                         # Name of the private/public key pair - locally available - used to login on the VMs
 OSK_KEY_NAME = cbtool_rsa                                                                                             # Name of the private key present in the cloud to be injected on VMs
 OSK_LOGIN = centos                                                                                                # The username that logins on the VMs
+
+[VM_DEFAULTS : OSK_CLOUDCONFIG]
+RUN_NETNAME = StorageNFS
+
+[AI_TEMPLATES : FIO]
+#DATA_FILESERVER_IP=change.me.ip
+#DATA_FILESERVER_PATH=/volumes/_nogroup/change_me
+#DATA_DIR=/nfsmount
+#DATA_FSTYP=nfs
+
+
+
 #-------------------------------------------------------------------------------
 # Elastic Compute Cloud (EC2) requires the following parameters 
 [USER-DEFINED : CLOUDOPTION_MYEC2] 
